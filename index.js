@@ -13,9 +13,10 @@ var server = app.listen(port, function(){
 
 //Static files
 app.use(express.static('public'));
+var io = require('socket.io').listen(server);
 
 // Socket setup & pass server
-var io = socket(server);
+//var io = socket(server);
 io.on('connection', (socket) => {
 
     console.log('made socket connection', socket.id);
